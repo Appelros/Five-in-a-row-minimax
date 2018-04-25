@@ -60,8 +60,6 @@ function jamfor(spelplan, spelare) {
 		for (x = 0; x < 20; x++) {
 			if (this.spelplan[y][x] == this.spelare) {
 				variabel += 1;
-      //  console.log("[" + this.spelplan.join("],\n[") + "]");
-        //console.log("VARIBALE",variabel);
 				if (variabel === 5) {
         console.log("NYVINST XXXXXX");
 					winstate = true;
@@ -91,7 +89,8 @@ function jamfor(spelplan, spelare) {
 		for (x = 0; x < 20; x++) {
 			if (this.spelplan[y][x] == this.spelare) {
 				variabel += 1;
-              for (l = 1; l<5; l++){ //Kollar diagonalt nedåt fem rutor
+              //Kollar diagonalt nedåt fem rutor
+              for (l = 1; l<5; l++){
                 if(y<19 && x<19){
                 if (this.spelplan[y+l][x+l] == this.spelare){
                   variabel +=1;
@@ -163,9 +162,7 @@ function fixaTestPlatser(spelplan){
         xplats = stenar[k][1] + j;
         if(-1 < yplats && yplats <20 &&
            -1 < xplats && xplats <20){
-            // if(this.spelplan[yplats][xplats] === 'number'){}
                platserRuntStenar.push([yplats,xplats]);
-
         }
       }
     }
@@ -180,7 +177,7 @@ function fixaTestPlatser(spelplan){
   return twodeReturn;
 }
 
-function taBortDubbletter(arr1, arr2){
+function taBortDubblette(arr1, arr2){
   //tar bort stenarnas position ur möjliga drag
   for(var a = 0; a < arr1.length; a++){
     for(var b = 0; b < arr2.length; b++){
@@ -191,30 +188,8 @@ function taBortDubbletter(arr1, arr2){
   }
   return arr1;
 }
-  /*
-  console.log(arr1);
-  //too much recursion rad 199
-  function kollaOmDup(arrer){
-    for(var i = 0; i<arrer.length; i++){
-      for(var j = 0; j<arrer.length; j++){
-        if(arrer[j]==arrer[i]){
-          return kollaOmDup(removeDuplicateUsingFilter(arrer));
-        }
-      }
-    } return arrer;
-  }
-  return kollaOmDup(arr1);
-}
 
-function removeDuplicateUsingFilter(arr){
-    let unique_array = arr.filter(function(elem, index, self) {
-        return index == self.indexOf(elem);
-    });
-    return unique_array
-}
-*/
-/*
-Gammal kod från rapporten för att ta bort dubletter som kanske fungerar
+//Gammal kod från rapporten för att ta bort dubletter som FUNGERAR
 function taBortDubbletter(arr){
   var uniques = [];
   var itemsFound = {};
@@ -227,10 +202,7 @@ function taBortDubbletter(arr){
   return uniques;
 }
 
-*/
-
 function printa(){
   var a = listToMatrix(board,20);
   console.log("[" + a.join("],\n[") + "]");
-
 }
