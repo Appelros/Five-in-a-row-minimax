@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Luffarschack</title>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+<style>
+#wrapper{
+  margin: 0 auto;
+  width: 840px;
+  height:840px;
+  background-color: rgb(230,230,230);
+  margin-top: 30px;
+}
+td{
+  height: 40px;
+  width: 40px;
+  border: 2px solid black;
+  font-size: 40px;
+  margin: 0 auto;
+}
+#konsol{
+    font-size: 45px;
+    padding: 0px;
+}
+#konsolrapper{
+  width: 836px;
+  border: 2px solid black;
+}
+#tid{
+  float:left;
+  margin-top: 10px;
+  font-size: 1.5em;
+  width: 100px;
+}
+#iterationer{
+  float: right;
+  margin-top: 10px;
+  font-size: 1.5em;
+  width: 100px;
+}
+p{display: inline-block;}
+</style>
+<script src="script.js"></script>
+<script src="dator.js"></script>
+<script src="grid.js"></script>
+<script>
+  window.onload = function(){
+    skapaGrid();
+  }
+</script>
+</head>
+<body>
+  <div id="wrapper">
+  </div>
+  <center>
+      <div id="konsolrapper">
+      <p id="tid">0 ms</p>
+      <p id="konsol">---------</p>
+      <p id="iterationer">0</p>
+    </div>
+  </center>
+</body>
+</html>
